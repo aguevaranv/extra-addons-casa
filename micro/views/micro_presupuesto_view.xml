@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="micro_presupuesto_view_tree">
+      <field name="name">Presupuesto</field>
+      <field name="model">micro.presupuesto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="cedula"/>
+          <field name="nombre"/>
+          <field name="edad"/>
+         
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="micro_presupuesto_view_form" model="ir.ui.view">
+      <field name="name">presupuesto</field>
+      <field name="model">micro.presupuesto</field>
+      <field name="arch" type="xml">
+        <form >
+          <sheet>
+            <group >
+              <group colspan="2">
+                <field name="nombre"/>               
+              </group>
+              <group>
+                <field name="cedula"/>                
+              </group>             
+              <group>
+                <field name="edad"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="micro_presupuesto_action">
+      <field name="name">Presupuesto</field>
+      <field name="res_model">micro.presupuesto</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--<menuitem name="Alumno" id="micro_presupuesto" parent="micro_listado" action="micro_presupuesto_action" sequence="1"/>-->
+
+  </data>
+</odoo>
